@@ -1,7 +1,4 @@
 'use strict';
-console.log(`=== Modal Development ===`);
-console.log(`Modal project ready!`);
-
 // select the modal element 
 const modalEl = document.querySelector(`.modal`);
 
