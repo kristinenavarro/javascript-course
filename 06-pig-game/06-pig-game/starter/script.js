@@ -1,5 +1,8 @@
 'use strict';
-// Element selections
+
+console.log(" Pig Game Ready");
+
+let scores, currentScore, activePlayer, playing;
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const score0El = document.querySelector('#score--0');
@@ -23,16 +26,45 @@ const init = function () {
 };
 init();
 
-
 btnRoll.addEventListener('click', function () {
   if (playing) {
-    
+   
+  }
+});
+btnRoll.addEventListener('click', function () {
+  if (playing) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
+  
   }
 });
 
 btnRoll.addEventListener('click', function () {
   if (playing) {
     const dice = Math.trunc(Math.random() * 6) + 1;
-   
+    diceEl.classList.remove('hidden');
+    diceEl.src = `dice-${dice}.png`;
+ 
   }
 });
+
+btnRoll.addEventListener('click', function () {
+  if (playing) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    diceEl.classList.remove('hidden');
+    diceEl.src = `dice-${dice}.png`;
+
+    if (dice !== 1) {
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+        
+      currentScore = 0;
+      document.getElementById(`current--${activePlayer}`).textContent = 0;
+    }
+  }
+});
+console.log('Scores:', scores);
+console.log('Current Score:', currentScore);
+console.log('Active Player:', activePlayer);
+console.log('Playing:', playing);
